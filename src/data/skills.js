@@ -1,0 +1,1 @@
+export const skills = [{ name: 'Backend', number: '01', items: ['Python', 'Django', 'FastAPI', 'REST APIs'] }, { name: 'Frontend', number: '02', items: ['React', 'JavaScript', 'HTML', 'CSS', 'Tailwind', 'Framer Motion'] }, { name: 'Database', number: '03', items: ['PostgreSQL', 'MySQL'] }, { name: 'Tools', number: '04', items: ['Git', 'Docker', 'Postman', 'Linux'] }]

@@ -1,0 +1,4 @@
+import { FiArrowUpRight, FiArrowUp } from 'react-icons/fi'
+import { site } from '../data/site'
+import { socials } from '../data/socials'
+export default function Footer() { return <footer className="footer section-shell"><a className="footer-top" href="#home">Back to top <FiArrowUp /></a><div className="footer-main"><a href="#home" className="wordmark">sm<span>.</span></a><p>{site.footerTagline[0]}<br />{site.footerTagline[1]}</p><div className="footer-socials">{socials.map(({ label, href, icon: Icon }) => <a key={label} href={href} aria-label={label} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}><Icon /></a>)}</div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {site.name}</span><span>Designed & built with care <FiArrowUpRight /></span><span>Made on Earth</span></div></footer> }

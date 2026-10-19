@@ -1,0 +1,5 @@
+import { motion } from 'framer-motion'
+import { experience } from '../data/experience'
+import SectionTitle from './SectionTitle'
+import { staggerContainer, slideUp } from '../animations/variants'
+export default function Experience() { return <section className="section-shell section-space" id="experience"><SectionTitle eyebrow="The journey" title="Learning by doing." note="A few milestones along the way." /><motion.div className="timeline" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: .2 }}><motion.div className="timeline-line" initial={{ scaleY: 0 }} whileInView={{ scaleY: 1 }} viewport={{ once: true }} transition={{ duration: 1.2, ease: 'easeOut' }} />{experience.map((item) => <motion.article className="timeline-item" key={item.period} variants={slideUp}><span className="timeline-dot" /><span className="timeline-period">{item.period}</span><div><h3>{item.role}</h3><span className="timeline-org">{item.organization}</span><p>{item.description}</p></div></motion.article>)}</motion.div></section> }

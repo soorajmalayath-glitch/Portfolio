@@ -1,0 +1,1 @@
+export default { content: ['./index.html', './src/**/*.{js,jsx}'], darkMode: 'class', theme: { extend: { fontFamily: { sans: ['DM Sans', 'sans-serif'], display: ['Space Grotesk', 'sans-serif'], mono: ['DM Mono', 'monospace'] }, colors: { ink: '#0a0b10', accent: '#9d8bff' } } }, plugins: [] }

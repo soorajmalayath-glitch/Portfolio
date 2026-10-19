@@ -1,0 +1,8 @@
+import { useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { FiArrowUpRight } from 'react-icons/fi'
+import { projects } from '../data/projects'
+import SectionTitle from './SectionTitle'
+import ProjectCard from './ProjectCard'
+const categories = ['All work', ...new Set(projects.map((project) => project.category))]
+export default function Projects() { const [filter, setFilter] = useState('All work'); const visible = filter === 'All work' ? projects : projects.filter((project) => project.category === filter); return <section className="section-shell section-space" id="projects"><div className="projects-heading"><SectionTitle eyebrow="Selected work" title="A few things I’ve made." note="A selection of projects exploring useful ideas and thoughtful execution." /><a className="text-link all-work-link" href="https://github.com/" target="_blank" rel="noreferrer">More on GitHub <FiArrowUpRight /></a></div><div className="filters" role="group" aria-label="Filter projects">{categories.map((category) => <button className={filter === category ? 'filter active' : 'filter'} key={category} onClick={() => setFilter(category)}>{category}{filter === category && <motion.span className="filter-underline" layoutId="filter-line" />}</button>)}</div><motion.div className="projects-grid" layout><AnimatePresence mode="popLayout">{visible.map((project) => <motion.div key={project.number} layout initial={{ opacity: 0, scale: .97 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: .97 }} transition={{ duration: .22 }}><ProjectCard project={project} /></motion.div>)}</AnimatePresence></motion.div></section> }
